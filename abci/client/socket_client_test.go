@@ -24,7 +24,7 @@ func TestSocketClientStopForErrorDeadlock(t *testing.T) {
 	c := abcicli.NewSocketClient(":80", false).(errorStopper)
 	err := errors.New("foo-tendermint")
 
-	// See Issue https://github.com/mydexchain/abci/issues/114
+
 	doneChan := make(chan bool)
 	go func() {
 		defer close(doneChan)
